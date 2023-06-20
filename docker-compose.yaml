@@ -7,6 +7,7 @@ networks:
 services:
   argareeva:
     image: postgres:latest
+    network_mode: bridge
     volumes:
       - ./argareeva/init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
@@ -22,5 +23,17 @@ services:
       interval: 1s
       timeout: 2s
       retries: 5
-    networks:
-      - kpo
+    # networks:
+    #   - kpo
+  # authorize:
+  #   build: ./authorize/
+  #   network_mode: bridge
+  #   ports:
+  #     - "5137:5137"
+  #   environment:
+  #     - DB_URL=postgresql://root:root@db/db?sslmode=disable
+  #     - PORT=8003
+  #   restart: on-failure
+  #   depends_on:
+  #     argareeva:
+  #       condition: service_healthy
