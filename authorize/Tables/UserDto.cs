@@ -1,0 +1,15 @@
+namespace authorize.Tables;
+
+public class UserRegistration
+{
+    public string Username { get; set; }
+    public string Email { get; set; }
+    public string PasswordHash { get; set; }
+    public string Role { get; set; }
+}
+
+public class UserLogin
+{
+    public string Email { get; set; }
+    public string PasswordHash { get; set; }
+}
