@@ -23,17 +23,3 @@ services:
       interval: 1s
       timeout: 2s
       retries: 5
-    # networks:
-    #   - kpo
-  # authorize:
-  #   build: ./authorize/
-  #   network_mode: bridge
-  #   ports:
-  #     - "5137:5137"
-  #   environment:
-  #     - DB_URL=postgresql://root:root@db/db?sslmode=disable
-  #     - PORT=8003
-  #   restart: on-failure
-  #   depends_on:
-  #     argareeva:
-  #       condition: service_healthy
